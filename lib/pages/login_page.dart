@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_luckypet_app/components/mybutton.dart';
 import 'package:flutter_luckypet_app/components/mytextfield.dart';
+import 'package:flutter_luckypet_app/components/squaretitle.dart';
 
 class LoginPage extends StatelessWidget {
   LoginPage({super.key});
@@ -18,6 +19,7 @@ class LoginPage extends StatelessWidget {
       body: SafeArea(
         child: Center(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const SizedBox(
                 height: 50,
@@ -94,10 +96,76 @@ class LoginPage extends StatelessWidget {
               ),
 
               //or continue with
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Divider(
+                        thickness: 0.9,
+                        color: Colors.grey[400],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                      child: Text('Or continue with?',
+                          style: TextStyle(
+                            color: Colors.grey[700],
+                          )),
+                    ),
+                    Expanded(
+                      child: Divider(
+                        thickness: 0.9,
+                        color: Colors.grey[400],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+
+              const SizedBox(
+                height: 30,
+              ),
 
               //google + apple signin buttons
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  //google button
+                  SquareTile(imagePath: 'lib/images/google.png'),
+
+                  SizedBox(
+                    width: 10,
+                  ),
+
+                  //apple button
+                  SquareTile(imagePath: 'lib/images/apple.png'),
+                ],
+              ),
+
+              const SizedBox(
+                height: 20,
+              ),
 
               //not a member? register now
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'Not a member?',
+                    style: TextStyle(color: Colors.grey[700]),
+                  ),
+                  const SizedBox(
+                    width: 4,
+                  ),
+                  const Text(
+                    'Register now!',
+                    style: TextStyle(
+                        color: Colors.blue, fontWeight: FontWeight.bold),
+                  ),
+                ],
+              ),
             ],
           ),
         ),
